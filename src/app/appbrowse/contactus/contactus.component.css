@@ -1,0 +1,9 @@
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 30%;  /* The width is the width of the web page */
+   }
+
+
+   .form-control.ng-touched.ng-invalid {
+    border: 2px solid red
+   }

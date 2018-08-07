@@ -1,0 +1,95 @@
+<div>
+  <p>
+    Thakolkaran Jewellery was established in 1985.
+    We started our business in a small shop and has grown over the years. 
+    All this wouldnt be possible without the support and trust of our customers.
+    Nowadays there is a lot of competition emerging and its difficult to battle without an online platform.
+    So we bring to you our online platform which you can use from the comforts of your home.
+    We are also sad that we wont get the chance to see you in our shop.
+    We wish to hear from you about our new platform.
+    Use the form below to communicate your thoughts/ideas/feedbacks.
+  </p>
+
+  <p style="float:right;">
+    Propreitor: Thomas Vareed Thakolkaran
+  </p>
+  <div style="clear: right"></div>
+</div>
+
+
+<div>
+
+  <div style="float: left;width:50%;">
+
+      <div #gmap style="width:100%;height:300px;"></div>
+
+      <!-- <div id="map" style="width:30%;height:400px"></div> -->
+
+  </div>
+
+  <div style="float:left;padding-left: 50px;">
+    Thakolkaran Gold Supermarket
+    <br>
+    Al Ameen shopping complex
+    <br>
+    Tana
+    <br>
+    Irinjalakuda
+    <br>
+    680121
+
+  </div>
+  <div style="clear: left;"></div>
+
+</div>
+
+<div style="padding-top: 10px;padding-bottom: 10px;">
+  <div> Customer feedback form</div>
+  <br/>
+ <!-- <form #feedback = "ngForm" (ngSubmit) = "onClickSubmit(feedback.value)" >
+  <div class="form-group">
+    <input type = "email" name = "email" placeholder = "Email" #email="ngModel" ngModel size="100%" required>
+    <div class="alert alert-danger">
+     <span class="" ng-show="feedback.email.$error.required">
+       Required!</span>
+     <span class="" ng-show="feedback.email.$error.email">
+       Not valid email!</span>
+   </div>
+  </div> 
+ 
+   <br/>
+   <div class="form-group">
+      <textarea placeholder = "Feedback" name = "feedback" ngModel rows="4" cols="100" required minlength="10"></textarea>
+      <br/>
+    </div>
+   <input type = "submit" value = "Submit" class="btn btn-primary">
+  </form> -->
+
+  <form (ngSubmit)="onSubmit()" #feedbackForm="ngForm">
+      <div class="form-group">
+          <!-- <input email required ngModel name="useremail" #useremail="ngModel"  
+                id="useremail" placeholder="Enter your email" class="form-control" size="100%"> -->
+          <input email required  name="useremail" #useremail="ngModel"  [(ngModel)]="feedback && feedback.useremail"
+                id="useremail" placeholder="Enter your email" class="form-control" size="100%">
+          <div class="alert alert-danger" *ngIf="useremail.touched && useremail.invalid">
+           <div *ngIf="useremail.errors?.required">Required!</div>
+           <div *ngIf="useremail.errors?.email">Not valid email!</div>
+           
+         </div>
+        </div> 
+       
+         <div class="form-group">
+            <!-- <textarea required name="comment" ngModel #comment="ngModel" placeholder="We appreciate your sincere feedback" 
+                     rows="3" cols="100" required minlength="10" class="form-control"></textarea> -->
+            <textarea required name="comment" #comment="ngModel" placeholder="We appreciate your sincere feedback" [(ngModel)]="feedback && feedback.comment"
+                     rows="3" cols="100" required class="form-control"></textarea>
+                     <div class="alert alert-danger" *ngIf="comment.touched && comment.invalid">
+                        <div *ngIf="comment.errors?.required">Required!</div>
+                      </div>
+          </div>
+          <div style="color: green;padding-bottom: 10px;" *ngIf="submitted">Thank you for the feedback</div>
+         <input [disabled]="!feedbackForm.form.valid" type = "submit" value = "Submit" class="btn btn-primary">
+  </form>
+</div> 
+
+

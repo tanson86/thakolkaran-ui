@@ -1,0 +1,47 @@
+<div>
+  <div style="width: 50%;border: black solid;float: left;">
+    <div id="highlightedimage" style="">
+      <!-- <div style="border: red solid;width: 50%;margin: auto;">hello</div> -->
+        <img style="max-width:100%;max-height:100%;margin: auto;display: block;" 
+          src="http://localhost:4200/assets/images/items/item.png" alt=""/>
+    </div>
+    <div style="width: 40%;margin: auto;">
+          <div id="previewimage1" style="height: 100px;float:left;border: green solid;">
+            <img style="max-width:100%;max-height:100%;" src="http://localhost:4200/assets/images/items/item.png" alt=""/>
+          </div>
+          <div id="previewimage2" style="height: 100px;float:left;border: green solid;">
+            <img style="max-width:100%;max-height:100%;" src="http://localhost:4200/assets/images/items/item.png" alt=""/>
+          </div>
+          <div id="previewimage3" style="height: 100px;float:left;border: green solid;">
+            <img style="max-width:100%;max-height:100%;" src="http://localhost:4200/assets/images/items/item.png" alt=""/>
+          </div>
+          <div style="clear:left"></div>
+    </div>
+    <div style="clear:both"></div>   
+  </div>
+
+  <div style="width: 50%;border: red solid;float: left;">
+    Other details like checkout/quantity/etc
+    <br>
+        
+        <div *ngIf="!registered"> Please login to Add to Cart </div>
+        <div>
+          <button  style="margin: 13px;" type="button" *ngIf="!registered" class="btn btn-primary">Sign In</button>
+          <button style="margin: 13px;" type="button" *ngIf="registered" class="btn btn-primary">Add to cart</button>
+          <button style="margin: 13px;" type="button" *ngIf="registered" class="btn btn-primary">Checkout</button>
+        </div>
+
+
+  </div>
+
+  <div style="clear:left"></div>
+  <br>
+  <div>
+    Product details
+  </div>
+  <P>Name : XXX</P>
+  <p>Net Weight:XXX</p>
+  <p>Gold Weight:XXX</p>
+  <p>Stone Weight:XXX</p>
+  <p>Stone cost:XXX</p>
+</div>
